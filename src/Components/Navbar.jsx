@@ -1,11 +1,19 @@
 import React from "react";
 import { NavLink } from "react-router";
 const Navbar = () => {
-  const links=<>
-  <li><NavLink to="/">Home</NavLink></li>
-  <li><NavLink to="/login">Login</NavLink></li>
-  <li><NavLink to="/signUp">Sign Up</NavLink></li>
-  </>
+  const links = (
+    <>
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/login">Login</NavLink>
+      </li>
+      <li>
+        <NavLink to="/signUp">Sign Up</NavLink>
+      </li>
+    </>
+  );
   return (
     <nav className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
@@ -36,9 +44,7 @@ const Navbar = () => {
         <a className="btn btn-ghost text-xl">Gandu</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal gap-5">
-          {links}
-        </ul>
+        <ul className="menu menu-horizontal gap-5">{links}</ul>
       </div>
       <div className="navbar-end">
         <a className="btn">Join Us</a>
