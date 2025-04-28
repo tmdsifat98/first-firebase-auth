@@ -1,0 +1,4 @@
+Use context er jonno first a authcontext file createcontext kore seta export kore disi.
+context provider file a ota import and return koresi value diye
+main.jsx a contextprovider er moddhe sob children nisi
+jekhane user korbo sekhane use(authcontext) evabe use korle value er man paoya jabe

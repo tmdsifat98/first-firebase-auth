@@ -1,13 +1,11 @@
-import {
-  GoogleAuthProvider,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-} from "firebase/auth";
-import React, { useState } from "react";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import React, { use, useState } from "react";
 import { auth } from "../firebase.init";
 import { Link } from "react-router";
+import { AuthContext } from "../Context/AuthContext";
 
 const Login = () => {
+  const { signInUser } = use(AuthContext);
   const [user, setUser] = useState(null);
   const googleProvider = new GoogleAuthProvider();
   const handleGoogleSignIn = () => {
@@ -23,7 +21,7 @@ const Login = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    signInWithEmailAndPassword(auth, email, password)
+    signInUser(email, password)
       .then((result) => console.log(result))
       .catch((err) => console.log(err));
   };
